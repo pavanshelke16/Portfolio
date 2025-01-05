@@ -31,8 +31,8 @@ SECRET_KEY = 'nv)=_h7=(#+dn7hk2#n17v406lzs#2-)l8kepd#y(u2g)g5_%-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = ['pavan-portfolio-hm1m.onrender.com', 'localhost', '127.0.0.8000']
 
-ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -127,12 +127,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 MEDIA_URL='/images/'
 
-STATICFILES_DIRS=[
-  os.path.join(BASE_DIR, 'static')  
-]
+
+
+# URL to use when referring to static files
+STATIC_URL = '/static/'
+
+# Absolute path to the directory where collectstatic will gather files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 
