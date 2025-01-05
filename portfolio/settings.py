@@ -31,7 +31,7 @@ SECRET_KEY = 'nv)=_h7=(#+dn7hk2#n17v406lzs#2-)l8kepd#y(u2g)g5_%-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['pavan-portfolio-hm1m.onrender.com', 'localhost', '127.0.0.8000']
+ALLOWED_HOSTS = ['pavan-portfolio-hm1m.onrender.com', 'localhost', '127.0.0.1']
 
 
 
@@ -56,7 +56,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'portfolio.urls'
 
@@ -130,12 +133,7 @@ USE_TZ = True
 # STATIC_URL = '/static/'
 MEDIA_URL='/images/'
 
-
-
-# URL to use when referring to static files
 STATIC_URL = '/static/'
-
-# Absolute path to the directory where collectstatic will gather files
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
